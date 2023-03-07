@@ -16,7 +16,7 @@ public class ContaTest {
 
 		assertEquals(saldoEsperado, contaCorrente.saldo);
 	}
-	
+
 	@Test
 	void testarContaPoupanca() {
 		Double saldoEsperado = 102D;
@@ -26,6 +26,34 @@ public class ContaTest {
 		contaPoupanca.rentabilizar();
 
 		assertEquals(saldoEsperado, contaPoupanca.saldo);
+	}
+
+	@Test
+	void testarPolimorfismo() {
+
+		Boolean flagContaCorrenteComoDefault = false;
+
+		Conta conta = null;
+
+		if (flagContaCorrenteComoDefault) {
+			conta = new ContaCorrente();
+		} else {
+			conta = new ContaPoupanca();
+		}
+
+		conta.depositar(100D);
+		conta.rentabilizar();
+		System.out.println(conta.getClass().getName());
+		System.out.println(conta.saldo);
+	}
+
+	@Test
+	void testaConta_ToString() {
+		ContaCorrente contaCorrente = new ContaCorrente();
+		contaCorrente.depositar(1000D);
+		contaCorrente.sacar(10D);
+
+		System.out.println(contaCorrente);
 	}
 
 }
