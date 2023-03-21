@@ -27,5 +27,26 @@ public class SobreCollection_2 {
 		todas.addAll(engenhariasAtuais);
 		todas.addAll(engenhariasFuturas);
 		System.out.println("Todas as engenharias: " + todas);
+
+		Collection<String> engenharias = new ArrayList<>(todas);
+
+		System.out.println("Engenharias vazias? " + engenharias.isEmpty());
+		System.out.println("Qtos elemento engenharias tem? " + engenharias.size());
+
+		imprimirStatusDaColecao(engenharias);
+		
+		System.out.println("...invocando clear()");
+		engenharias.clear();
+
+		imprimirStatusDaColecao(engenharias);
+
 	}
+
+	private static void imprimirStatusDaColecao(Collection<String> engenharias) {
+		if (engenharias.isEmpty())
+			System.out.println("Vazio");
+		else
+			System.out.println("Tem elementos");
+	}
+
 }

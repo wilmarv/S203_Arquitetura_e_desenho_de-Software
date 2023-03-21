@@ -3,7 +3,7 @@ package avancado;
 import java.util.Collection;
 import java.util.TreeSet;
 
-public class SobreCollection {
+public class SobreCollection_1 {
 
 	public static void main(String[] args) {
 
